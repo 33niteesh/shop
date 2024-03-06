@@ -64,7 +64,17 @@ public class CustomerProductController {
     	}
 
     }
-    
+    @PostMapping("/add_customer_batch")
+    @Operation(summary="Add customer")
+    public ResponseEntity<?> addUsers(@RequestBody CustomerProductDetails user){
+    	try {
+    		productdao.Customerproductsave(user);
+    		return new ResponseEntity<>("customer added",HttpStatus.CREATED);
+    	}catch(Exception e) {
+    		throw new Conflict(e.getMessage());
+    	}
+
+    }
     @DeleteMapping("/customer_remove/{id}")
     @Operation(summary="Delete customer by Id")
     public ResponseEntity<?> deleteUser(@PathVariable int id){
