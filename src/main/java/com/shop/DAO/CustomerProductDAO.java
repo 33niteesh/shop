@@ -10,5 +10,6 @@ public interface CustomerProductDAO {
 	List<CustomerProductDetails> allCustomers() throws SQLException;
 	List<CustomerProductDetails> getById(int id) throws SQLException;
 	String deleteById(int id) throws SQLException;
+	CustomerProductDetails Customerproductsave(CustomerProductDetails user) throws SQLException;
 	CustomerProductDetails saveCustomerproduct1(CustomerProductDetails user) throws SQLException;
 }
